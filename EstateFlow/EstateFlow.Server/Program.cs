@@ -1,5 +1,7 @@
 using EstateFlow.Infrastructure.Data;
 using EstateFlow.Application.Services;
+using EstateFlow.Application;
+using EstateFlow.Infrastructure;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi;
@@ -27,6 +29,9 @@ builder.Services.AddScoped<IApplicationDbContext>(provider =>
     provider.GetRequiredService<EstateFlowDbContext>());
 
 builder.Services.AddValidatorsFromAssemblyContaining<IApplicationDbContext>();
+
+builder.Services.AddApplication();
+builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 
