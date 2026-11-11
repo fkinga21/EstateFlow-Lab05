@@ -2,7 +2,7 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
-namespace EstateFlow.Server.Contracts.Properties
+namespace EstateFlow.Application.Contracts.Properties
 {
     public class CreatePropertyRequestValidator : AbstractValidator<CreatePropertyRequest>
     {

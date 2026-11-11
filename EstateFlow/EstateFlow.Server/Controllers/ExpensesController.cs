@@ -1,4 +1,4 @@
-﻿using EstateFlow.Server.Contracts.Expenses;
+﻿using EstateFlow.Application.Contracts.Expenses;
 using EstateFlow.Infrastructure.Data;
 using EstateFlow.Domain;
 using FluentValidation;

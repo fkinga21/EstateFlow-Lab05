@@ -1,5 +1,5 @@
 using EstateFlow.Infrastructure.Data;
-using EstateFlow.Server.Services;
+using EstateFlow.Application.Services;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi;
@@ -25,6 +25,8 @@ builder.Services.AddScoped<IMeterReadingService, MeterReadingService>();
 
 builder.Services.AddScoped<IApplicationDbContext>(provider =>
     provider.GetRequiredService<EstateFlowDbContext>());
+
+builder.Services.AddValidatorsFromAssemblyContaining<IApplicationDbContext>();
 
 var app = builder.Build();
 
