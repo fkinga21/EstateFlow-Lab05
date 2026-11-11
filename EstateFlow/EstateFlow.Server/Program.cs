@@ -23,6 +23,9 @@ builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
 builder.Services.AddScoped<IMeterReadingService, MeterReadingService>();
 
+builder.Services.AddScoped<IApplicationDbContext>(provider =>
+    provider.GetRequiredService<EstateFlowDbContext>());
+
 var app = builder.Build();
 
 app.UseDefaultFiles();

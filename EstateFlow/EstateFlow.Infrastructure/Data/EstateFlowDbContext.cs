@@ -1,6 +1,8 @@
 ﻿using EstateFlow.Domain;
 using Microsoft.EntityFrameworkCore;
 
+public class EstateFlowDbContext : DbContext, IApplicationDbContext
+
 namespace EstateFlow.Infrastructure.Data
 {
     public class EstateFlowDbContext : DbContext
